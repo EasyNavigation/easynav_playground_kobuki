@@ -1,0 +1,9 @@
+repositories:
+  ThirdParty/worlds/aws-robomaker-small-house-world:
+    type: git
+    url: https://github.com/Juancams/aws-robomaker-small-house-world
+    version: ros2-jazzy
+  ThirdParty/robots/kobuki_ros:
+    type: git
+    url: https://github.com/Juancams/kobuki_ros.git
+    version: rolling-simulation
