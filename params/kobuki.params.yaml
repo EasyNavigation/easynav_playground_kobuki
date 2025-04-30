@@ -1,0 +1,37 @@
+controller_node:
+  ros__parameters:
+    use_sim_time: true
+
+localizer_node:
+  ros__parameters:
+    use_sim_time: true
+
+maps_manager_node:
+  ros__parameters:
+    use_sim_time: true
+    map_types: [simple]
+    simple:
+      plugin: easynav_simple_maps_manager/SimpleMapsManager
+      package: easynav_playground_kobuki
+      map_path_file: maps/home.map
+
+planner_node:
+  ros__parameters:
+    use_sim_time: true
+
+sensors_node:
+  ros__parameters:
+    use_sim_time: true
+    forget_time: 0.5
+    sensors: [laser1, camera1]
+    perception_default_frame: odom
+    laser1:
+      topic: /scan_raw
+      type: LaserScan
+    camera1:
+      topic: /rgbd_camera/points
+      type: PointCloud
+
+system_node:
+  ros__parameters:
+    use_sim_time: true
