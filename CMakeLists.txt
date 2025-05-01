@@ -11,6 +11,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY maps params DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY maps params launch DESTINATION share/${PROJECT_NAME})
 
 ament_package()

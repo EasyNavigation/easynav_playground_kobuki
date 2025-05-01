@@ -5,11 +5,13 @@
   <version>0.0.1</version>
   <description>Easy Navigation: Kobuki Playground package.</description>
   <maintainer email="fmrico@gmail.com">fmrico</maintainer>
+  <maintainer email="jc.manzanares.serrano@gmail.com">Juan Carlos Manzanares Serrano</maintainer>
   <license>GPL-3.0-only</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <exec_depend>easynav_system</exec_depend>
+  <exec_depend>aws_robomaker_small_house_world</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
