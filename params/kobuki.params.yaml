@@ -16,9 +16,12 @@ localizer_node:
     simple:
       rt_freq: 50.0
       freq: 5.0
-      reseed_freq: 1.0
+      reseed_freq: 0.1
       plugin: easynav_simple_localizer/AMCLLocalizer
       num_particles: 100
+      noise_translation: 0.05
+      noise_rotation: 0.1
+      noise_translation_to_rotation: 0.1
       initial_pose:
         x: 0.0
         y: 0.0
@@ -61,3 +64,5 @@ sensors_node:
 system_node:
   ros__parameters:
     use_sim_time: true
+    position_tolerance: 0.1
+    angle_tolerance: 0.05
