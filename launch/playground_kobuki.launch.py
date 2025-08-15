@@ -18,6 +18,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import os
+from os.path import join
 
 from ament_index_python.packages import get_package_share_directory
 
@@ -70,6 +71,23 @@ def generate_launch_description():
             'launch/'), 'spawn.launch.py']),
     )
 
+    # Bridge
+    ros_gz_bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        name='bridge_ros_gz',
+        parameters=[
+            {
+                'config_file': join(
+                     get_package_share_directory('easynav_playground_kobuki'),
+                     'config', 'bridge', 'clock_bridge.yaml'
+                ),
+                'use_sim_time': True,
+            }
+        ],
+        output='screen',
+    )
+
     model_path = ''
     resource_path = ''
     pkg_path = get_package_share_directory('easynav_playground_kobuki')
@@ -88,5 +106,6 @@ def generate_launch_description():
     ld.add_action(gazebo_server)
     ld.add_action(gazebo_client)
     ld.add_action(spawn_robot)
+    ld.add_action(ros_gz_bridge)
 
     return ld

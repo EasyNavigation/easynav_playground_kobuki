@@ -5,7 +5,7 @@ controller_node:
     simple:
       rt_freq: 30.0 
       plugin: easynav_simple_controller/SimpleController
-      max_linear_speed: 0.4
+      max_linear_speed: 0.6
       max_angular_speed: 1.0
       look_ahead_dist: 0.2
       k_rot: 0.5
@@ -28,7 +28,7 @@ localizer_node:
         y: 0.0
         yaw: 0.0
         std_dev_xy: 0.1
-        std_dev_yaw: 0.01      
+        std_dev_yaw: 0.01
 
 maps_manager_node:
   ros__parameters:
@@ -57,10 +57,12 @@ sensors_node:
     perception_default_frame: odom
     laser1:
       topic: /scan_raw
-      type: LaserScan
+      type: sensor_msgs/msg/LaserScan
+      group: points
     camera1:
       topic: /rgbd_camera/points
-      type: PointCloud
+      type: sensor_msgs/msg/PointCloud2
+      group: points
 
 system_node:
   ros__parameters:
