@@ -21,9 +21,13 @@
 robots:
 - name: kobuki_1
   namespace: r1
+  camera: 'false'
+  lidar: 'true'
 
 - name: kobuki_2
   namespace: r2
+  camera: 'false'
+  lidar: 'true'
   x: 2.0
   y: 1.0
   Y: 0.0
