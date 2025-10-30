@@ -48,6 +48,12 @@ def generate_launch_description():
         description='Set to false to run gazebo headless',
     )
 
+    lidar_range_arg = DeclareLaunchArgument(
+        'lidar_range',
+        default_value='3.0',
+        description='Maximum range of the lidar sensor in meters'
+    )
+
     gazebo_server = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('ros_gz_sim'), 'launch',
@@ -69,6 +75,9 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('kobuki_description'),
             'launch/'), 'spawn.launch.py']),
+        launch_arguments={
+            'lidar_range': LaunchConfiguration('lidar_range'),
+        }.items()
     )
 
     # Bridge
@@ -103,6 +112,7 @@ def generate_launch_description():
     ld.add_action(SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH', model_path))
     ld.add_action(world_arg)
     ld.add_action(gui_arg)
+    ld.add_action(lidar_range_arg)
     ld.add_action(gazebo_server)
     ld.add_action(gazebo_client)
     ld.add_action(spawn_robot)
