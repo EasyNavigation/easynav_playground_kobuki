@@ -1,5 +1,5 @@
-# Use the official ROS 2 Jazzy image as base
-FROM ros:jazzy-ros-base
+# Use the official ROS 2 rolling image as base
+FROM ros:rolling-ros-base
 
 ENV WORKSPACE=/root/easynav_ws
 
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     wget \
     nano \
     unzip \
-    ros-jazzy-rviz2 \
+    ros-rolling-rviz2 \
     && rm -rf /var/lib/apt/lists/*
 
 
@@ -22,10 +22,10 @@ WORKDIR $WORKSPACE
 
 # Clone the Easynav project and research repositories
 RUN cd src && \
-    git clone -b jazzy https://github.com/EasyNavigation/EasyNavigation.git  && \
-    git clone -b jazzy https://github.com/EasyNavigation/NavMap.git  && \
-    git clone -b jazzy https://github.com/EasyNavigation/easynav_plugins.git  && \
-    git clone -b jazzy https://github.com/fmrico/yaets.git  && \
+    git clone -b rolling https://github.com/EasyNavigation/EasyNavigation.git  && \
+    git clone -b rolling https://github.com/EasyNavigation/NavMap.git  && \
+    git clone -b rolling https://github.com/EasyNavigation/easynav_plugins.git  && \
+    git clone -b rolling https://github.com/fmrico/yaets.git  && \
     git clone https://github.com/EasyNavigation/easynav_playground_kobuki.git  && \
     vcs import . < easynav_playground_kobuki/thirdparty.repos
 
@@ -36,17 +36,17 @@ RUN rosdep update && \
     rm -rf /var/lib/apt/lists/*
 
 # Source ROS
-RUN . /opt/ros/jazzy/setup.sh && \
+RUN . /opt/ros/rolling/setup.sh && \
     colcon build --symlink-install
 
 # Set up the environment to configure automatically
-RUN echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc && \
+RUN echo "source /opt/ros/rolling/setup.bash" >> ~/.bashrc && \
     echo "source $WORKSPACE/install/setup.bash" >> ~/.bashrc
 
 
 RUN echo '#!/bin/bash\n\
 set -e\n\
-source /opt/ros/jazzy/setup.bash\n\
+source /opt/ros/rolling/setup.bash\n\
 source $WORKSPACE/install/setup.bash\n\
 ros2 launch easynav_playground_kobuki playground_kobuki.launch.py > /var/log/gazebo.log 2>&1 &\n\
 rviz2 -d ~/easynav_wssrc/easynav_playground_kobuki/rviz/nav2_namespaced_view.rviz > /var/log/rviz.log 2>&1 &\n\
