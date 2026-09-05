@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-IMAGE_NAME="easynav_playground:kobuki_jazzy"
+IMAGE_NAME="easynav_playground:kobuki_rolling"
 CONTAINER_NAME="playground_kobukis"
 ROS_DOMAIN_ID="0"
 
