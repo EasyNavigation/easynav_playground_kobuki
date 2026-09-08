@@ -21,7 +21,9 @@ cd <easynav-playground_kobuki>/docker/
 chmod +x launch.sh
 ```
  
-Execute: 
+Execute:
+
+We can launch the docker with different options. --auto or alone and the script will detect the graphic server, --wayland if you have wayland in your computer or --x11.
 ```bash
 cd <easynav-playground_kobuki>/docker/
 
