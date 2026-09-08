@@ -49,7 +49,7 @@ set -e\n\
 source /opt/ros/rolling/setup.bash\n\
 source $WORKSPACE/install/setup.bash\n\
 ros2 launch easynav_playground_kobuki playground_kobuki.launch.py > /var/log/gazebo.log 2>&1 &\n\
-rviz2 -d ~/easynav_wssrc/easynav_playground_kobuki/rviz/nav2_namespaced_view.rviz > /var/log/rviz.log 2>&1 &\n\
+rviz2 -d ~/easynav_wssrc/easynav_playground_kobuki/rviz/default_view.rviz > /var/log/rviz.log 2>&1 &\n\
 echo "Simulation and rviz started in the background."\n\
 exec "$@"' > /usr/local/bin/entrypoint.sh && \
 chmod +x /usr/local/bin/entrypoint.sh
