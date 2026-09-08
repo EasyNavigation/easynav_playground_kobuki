@@ -5,6 +5,8 @@ This repository contains the 'Dockerfile' to use SummitXL playground, the image 
 ## Instalation
 
 ```bash
+cd <easynav-playground_kobuki>/docker/
+
 docker build -t easynav_playground:kobuki_kilted .
 ```
 
@@ -14,11 +16,15 @@ docker build -t easynav_playground:kobuki_kilted .
  
 The first time Grant execute permissions to the script:
 ```bash
+cd <easynav-playground_kobuki>/docker/
+
 chmod +x launch.sh
 ```
  
 Execute: 
 ```bash
+cd <easynav-playground_kobuki>/docker/
+
 ./launch.sh
 ```
  
@@ -31,6 +37,8 @@ This script:
 ### Option B: in our terminal
  
 ```bash
+cd <easynav-playground_kobuki>/docker/
+
 xhost +local:docker
  
 docker run -it --rm \
