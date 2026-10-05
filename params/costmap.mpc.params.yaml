@@ -15,9 +15,6 @@ controller_node:
     mpc:
       rt_freq: 30.0
       plugin: easynav_mpc_controller/MPCController
-      # MPCController's own in-loop obstacle constraint (braking before an obstacle ahead is
-      # the recovery system's, in recovery_node).
-      use_collision_checker: true
 
 localizer_node:
   ros__parameters:

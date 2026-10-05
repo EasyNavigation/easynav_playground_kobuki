@@ -26,16 +26,22 @@ launch:
     name: GZ_SIM_RESOURCE_PATH
     value: $(find-pkg-share easynav_playground_kobuki)/models:$(env GZ_SIM_RESOURCE_PATH '')
 
-- include:
-    file: $(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py
-    arg:
-    - {name: gz_args, value: -r -s $(var world)}
+- set_env:
+    name: GZ_SIM_SYSTEM_PLUGIN_PATH
+    value: $(env GZ_SIM_SYSTEM_PLUGIN_PATH ''):$(env LD_LIBRARY_PATH '')
 
-- include:
+# Gazebo is started without a shell (gz_sim.launch.py uses one) and the GUI client runs
+# directly ("gz sim -g" runs it as a child that outlives a SIGTERM), so the launch's
+# signals reach both: on shutdown, no server or GUI window is left behind.
+- executable:
+    name: gz_server
+    cmd: gz sim -r -s $(var world)
+    output: screen
+- executable:
     if: $(var gui)
-    file: $(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py
-    arg:
-    - {name: gz_args, value: -g}
+    name: gz_gui
+    cmd: $(find-pkg-prefix gz_sim_vendor)/opt/gz_sim_vendor/libexec/gz/sim/gz-sim-gui-client
+    output: screen
 
 - node:
     pkg: ros_gz_bridge
