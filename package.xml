@@ -13,33 +13,34 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <exec_depend>launch</exec_depend>
-  <exec_depend>launch_ros</exec_depend>
-  <exec_depend>launch_yaml</exec_depend>
-  <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>xacro</exec_depend>
-  <exec_depend>ros_gz_sim</exec_depend>
-  <exec_depend>ros_gz_bridge</exec_depend>
-  <exec_depend>rviz2</exec_depend>
-  <exec_depend>ros2topic</exec_depend>
-
-  <exec_depend>easynav_system</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>easynav_costmap_localizer</exec_depend>
+  <exec_depend>easynav_costmap_maps_manager</exec_depend>
+  <exec_depend>easynav_costmap_planner</exec_depend>
+  <exec_depend>easynav_diagnostic_recovery</exec_depend>
   <exec_depend>easynav_interfaces</exec_depend>
+  <exec_depend>easynav_mhamcl_localizer</exec_depend>
+  <exec_depend>easynav_mpc_controller</exec_depend>
+  <exec_depend>easynav_mppi_controller</exec_depend>
+  <exec_depend>easynav_regulated_pp_controller</exec_depend>
+  <exec_depend>easynav_routes_maps_manager</exec_depend>
+  <exec_depend>easynav_serest_controller</exec_depend>
   <exec_depend>easynav_simple_controller</exec_depend>
   <exec_depend>easynav_simple_localizer</exec_depend>
   <exec_depend>easynav_simple_maps_manager</exec_depend>
   <exec_depend>easynav_simple_planner</exec_depend>
   <exec_depend>easynav_simple_recovery</exec_depend>
-  <exec_depend>easynav_costmap_localizer</exec_depend>
-  <exec_depend>easynav_costmap_maps_manager</exec_depend>
-  <exec_depend>easynav_costmap_planner</exec_depend>
-  <exec_depend>easynav_routes_maps_manager</exec_depend>
-  <exec_depend>easynav_mhamcl_localizer</exec_depend>
-  <exec_depend>easynav_regulated_pp_controller</exec_depend>
-  <exec_depend>easynav_mppi_controller</exec_depend>
-  <exec_depend>easynav_mpc_controller</exec_depend>
-  <exec_depend>easynav_serest_controller</exec_depend>
-  <exec_depend>easynav_diagnostic_recovery</exec_depend>
+  <exec_depend>easynav_system</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>launch_yaml</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>ros2topic</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>xacro</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
