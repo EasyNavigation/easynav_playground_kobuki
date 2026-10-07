@@ -13,6 +13,7 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <exec_depend>ament_index_python</exec_depend>
   <exec_depend>easynav_costmap_localizer</exec_depend>
   <exec_depend>easynav_costmap_maps_manager</exec_depend>
   <exec_depend>easynav_costmap_planner</exec_depend>
@@ -33,6 +34,7 @@
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
   <exec_depend>launch_yaml</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>ros2topic</exec_depend>
   <exec_depend>ros_gz_bridge</exec_depend>
