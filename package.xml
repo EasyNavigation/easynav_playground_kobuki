@@ -3,10 +3,13 @@
 <package format="3">
   <name>easynav_playground_kobuki</name>
   <version>0.0.1</version>
-  <description>Easy Navigation: Kobuki Playground package.</description>
-  <maintainer email="fmrico@gmail.com">fmrico</maintainer>
-  <maintainer email="jc.manzanares.serrano@gmail.com">Juan Carlos Manzanares Serrano</maintainer>
-  <license>GPL-3.0-only</license>
+  <description>Easy Navigation: Gazebo playground with a Kobuki in a small house, self-contained.</description>
+  <maintainer email="fmrico@gmail.com">Francisco Martín Rico</maintainer>
+  <license file="LICENSE">Apache-2.0</license>
+  <!-- Kobuki URDF and meshes (urdf/, meshes/), from kobuki_ros -->
+  <license file="LICENSE-BSD">BSD-3-Clause</license>
+  <!-- Small house world and models (worlds/, models/), from aws-robomaker-small-house-world -->
+  <license file="models/LICENSE">MIT-0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
