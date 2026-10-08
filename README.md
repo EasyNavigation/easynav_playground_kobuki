@@ -7,6 +7,10 @@ SPDX-License-Identifier: Apache-2.0
 
 Gazebo Harmonic simulation of a Kobuki in the AWS RoboMaker small house, integrated with EasyNav. The package is self-contained: the robot model, the world, the maps and the EasyNav configurations are all included, so you only need this package plus EasyNav (core and plugins).
 
+## Supported ROS 2 distributions
+
+This playground needs Gazebo Harmonic or newer, so it runs on Jazzy and later distributions, but not on Humble, whose Gazebo is Fortress. EasyNav itself (core and plugins) does run on Humble: only this simulation does not.
+
 ## Build
 
 From the ROS 2 workspace root:

@@ -31,6 +31,7 @@
   <exec_depend>easynav_simple_planner</exec_depend>
   <exec_depend>easynav_simple_recovery</exec_depend>
   <exec_depend>easynav_system</exec_depend>
+  <exec_depend>gz_sim_vendor</exec_depend>
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
   <exec_depend>launch_yaml</exec_depend>
